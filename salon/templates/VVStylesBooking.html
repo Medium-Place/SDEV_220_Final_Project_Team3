@@ -3,10 +3,11 @@
     <link rel="stylesheet" href="topnav.css">
 
     <div class="topnav">
-        <a class="active" href="VVStylesHome.html">Home</a>
-        <a href="VVStylesBooking.html">Booking</a>
-        <a href="VVStylesServices.html">Services</a>
-      </div>
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="{% url 'booking' %}">Booking</a>
+        <a href="{% url 'services' %}">Services</a>
+    </div>
+    
 
     <head>
         <title>V V's Styles Booking</title>
