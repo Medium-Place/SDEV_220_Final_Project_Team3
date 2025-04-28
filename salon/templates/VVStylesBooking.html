@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html>
-    <link rel="stylesheet" href="topnav.css">
 
     <div class="topnav">
         <a class="active" href="{% url 'home' %}">Home</a>
@@ -17,17 +18,35 @@
             <h1 style="color: #3366cc">Booking:</h1>
         </header>
 
-        <article>
-           <h2>Stylists</h2>
-           <p>- VV</p>
-           <p> -Emma</p>
-           <p> -Lily</p>
-            <h2>Services</h2>
-            <p style="color: #808080"> (See Services Page for Details)</p>
-            <p> Simple Design Braids</p>
-            <p> Intermediate Design Braids</p>
-            <p> Freestyle Styling</p>
+        <h1>Book an Appointment</h1>
 
-        </article>
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+        
+            <label for="time">Time:</label><br>
+            <input type="time" id="time" name="time" required><br><br>
+        
+            <label for="stylist">Choose a Stylist:</label><br>
+            <select id="stylist" name="stylist" required>
+                {% for stylist in stylists %}
+                    <option value="{{ stylist.stylist_id }}">{{ stylist.name }}</option>
+                {% endfor %}
+            </select><br><br>
+        
+            <label for="service">Choose a Style:</label><br>
+            <select id="service" name="service" required>
+                {% for service in services %}
+                    <option value="{{ service.service_id }}">{{ service.service_type }}</option>
+                {% endfor %}
+            </select><br><br>
+        
+            <button type="submit">Confirm Booking</button>
+        </form>
     </body>
 </html>
