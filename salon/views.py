@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from .models import Service, Stylist, Customer, Appointment
 import datetime
@@ -73,6 +74,7 @@ def booking_view(request):
             })
 
     return render(request, 'VVStylesBooking.html', {'services': services, 'stylists': stylists})
+
 
 
 

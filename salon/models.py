@@ -1,3 +1,4 @@
+
 from django.db import models # type: ignore
 
 class Stylist(models.Model): #Defines Stylist Class to store information about stylist
@@ -100,8 +101,4 @@ class Service(models.Model):#Defines Service Class to store the types of service
     def __str__(self): #String representation of the service object
         return self.service_type
     
-
-
-
-
 
