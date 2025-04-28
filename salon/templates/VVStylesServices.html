@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+    <div class="topnav">
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="{% url 'booking' %}">Booking</a>
+        <a href="{% url 'services' %}">Services</a>
+    </div>
+
+    <head>
+        <title>V V's Styles Services</title>
+    </head>
+     <body>
+        <header>
+            <h1 style="color: #3366cc">Services:</h1>
+        </header>
+
+
+    {% if services %}
+        {% for service in services %}
+            <div style="border: 1px solid gray; padding: 10px; margin: 10px;">
+                <h2>{{ service.service_type }}</h2>
+                <p>{{ service.style_description }}</p>
+                <p>Duration: {{ service.duration }}</p>
+                <p>Price: ${{ service.price }}</p>
+                <a href="{% url 'booking' %}">Book Now</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No services available at this time. Please check back later!</p>
+    {% endif %}
+
+        
+
+
+  
+
+    </body>
+</html>

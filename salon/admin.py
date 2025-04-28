@@ -1,3 +1,4 @@
+
 from django.contrib import admin
 from .models import Stylist
 from .models import Customer
@@ -10,3 +11,4 @@ admin.site.register(Appointment)
 admin.site.register(Service)
 
 # Register your models here.
+
