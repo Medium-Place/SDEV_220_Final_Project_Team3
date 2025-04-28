@@ -7,7 +7,6 @@ class Stylist(models.Model): #Defines Stylist Class to store information about s
     name = models.CharField(max_length=100)  # Stylist's name
     phone_number = models.CharField(max_length=20) # Stylist's contact number
     social_media = models.CharField(max_length=100, blank=True) # Optional social media link
-    portfolio = models.ImageField(blank=True, null=True) #Optional portfolio image
     
     #Methods
     def confirm_appointment(self, appointment): #method to confirm an appointment
@@ -89,6 +88,8 @@ class Service(models.Model):#Defines Service Class to store the types of service
     style_description = models.TextField() #Description of the style/service
     duration = models.DurationField()  #Time required for the service
     price = models.DecimalField(max_digits=6, decimal_places=2) #Price of the service
+    pic = models.ImageField(upload_to='service_pics/', blank=True, null=True)
+
 
     #Methods
     def get_service_price(self): #Returns the price of the service
