@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="topnav.css">
 
     <div class="topnav">
-        <a class="active" href="VVStylesHome.html">Home</a>
-        <a href="VVStylesBooking.html">Booking</a>
-        <a href="VVStylesServices.html">Services</a>
-      </div>
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="{% url 'booking' %}">Booking</a>
+        <a href="{% url 'services' %}">Services</a>
+    </div>
+    
 
     <head>
         <title>V V's Styles Home</title>
@@ -15,16 +15,18 @@
         <header>
             <h1 style="color: #3366cc">V V's Styles</h1>
         </header>
-
+        
         <article>
-            <h2><a href="">Booking</a></h2>
-            <p>Choose your Stylist & Service.</p>
-        </article>
-
-        <article>
-            <h2><a href="">Services</a></h2>
+            <h2><a href="{% url 'services' %}">Services</a></h2>
             <p>Simple Design Braids - Intermediate Design Braids - Freestyle Styling.</p>
             <p>Appointments can last anywhere from 1.5 hrs to 4 hrs. </p>
         </article>
+        
+        <article>
+            <h2><a href="{% url 'booking' %}">Booking</a></h2>
+            <p>Choose your Stylist & Service.</p>
+        </article>
+
+
     </body>
 </html>
