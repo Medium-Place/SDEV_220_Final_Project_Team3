@@ -1,2 +1,4 @@
 # SDEV_220_Final_Project
-Repository for the final project for Software Development 
+Repository for the Software Development (SDEV 220) Final Project. 
+
+Link to the home page of the application: https://ckiefer.pythonanywhere.com/ 
